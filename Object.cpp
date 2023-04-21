@@ -31,3 +31,33 @@ void Time::set_secunds(int C)
 {
 	hours = C;
 }
+Time& Time::operator=(const Time& c)
+{
+	if (&c == this)return *this;
+	hours = c.hours;
+	minutes = c.minutes;
+	secund = c.secund;
+	return *this;
+}
+istream& operator >>(istream& in, Time& c)
+{
+	cout << "Hours: "; in >> c.hours;
+	cout << "Minutes: "; in >> c.minutes;
+	cout << "Secunds: "; in >> c.secund;
+	return in;
+}
+ostream& operator <<(ostream& out, const Time& c)
+{
+	out << "\nHOURS: " << c.hours;
+	out << "\nMINUTES: " << c.minutes;
+	out << "\nSECUNDS: " << c.secund;
+	out << "\n";
+	return out;
+}
+void Time::Show() 
+{
+	cout << "\nHOURS: " << hours;
+	cout << "\nMINUTES: " << minutes;
+	cout << "\nSECUNDS: " << secund;
+	cout << "\n";
+}
