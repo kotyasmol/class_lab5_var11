@@ -8,7 +8,6 @@ void main()
 	Time a;
 	cin >> a;
 	cout << a << endl;
-	Object* p = &a;
+	Object *p=&a;
 	p->Show();
-
 }
